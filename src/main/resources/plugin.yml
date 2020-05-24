@@ -1,0 +1,5 @@
+name: BungeePlugin
+main: me.nurio.minecraft.bungeecord.plugins.pluginbase.MClass
+author: "Nurio Fernández"
+version: 0.0.1
+description: BungeeCord plugin base
