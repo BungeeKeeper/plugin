@@ -1,9 +1,9 @@
-package me.nurio.minecraft.bungeecord.plugins.pluginbase;
+package me.nurio.minecraft.bungeecord.plugins.bungeekeeper;
 
-import me.nurio.minecraft.bungeecord.plugins.pluginbase.connection.sockets.ConnectionManager;
-import me.nurio.minecraft.bungeecord.plugins.pluginbase.listeners.PlayerConnectionListener;
-import me.nurio.minecraft.bungeecord.plugins.pluginbase.listeners.PingListener;
-import me.nurio.minecraft.bungeecord.plugins.pluginbase.listeners.ServerListener;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.sockets.ConnectionManager;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.listeners.PlayerConnectionListener;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.listeners.PingListener;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.listeners.ServerListener;
 import net.md_5.bungee.api.plugin.Plugin;
 
 public class MClass extends Plugin {

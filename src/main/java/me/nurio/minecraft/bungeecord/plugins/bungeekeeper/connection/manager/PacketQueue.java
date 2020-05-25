@@ -1,6 +1,6 @@
-package me.nurio.minecraft.bungeecord.plugins.pluginbase.connection.manager;
+package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.manager;
 
-import me.nurio.minecraft.bungeecord.plugins.pluginbase.connection.packets.Packet;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.Packet;
 import lombok.SneakyThrows;
 
 import java.util.ArrayList;

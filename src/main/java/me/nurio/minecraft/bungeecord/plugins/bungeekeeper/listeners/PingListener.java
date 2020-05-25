@@ -1,6 +1,6 @@
-package me.nurio.minecraft.bungeecord.plugins.pluginbase.listeners;
+package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.listeners;
 
-import me.nurio.minecraft.bungeecord.plugins.pluginbase.connection.packets.bungee.HandshakePacket;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.bungee.HandshakePacket;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import net.md_5.bungee.api.connection.PendingConnection;

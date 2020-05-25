@@ -1,8 +1,8 @@
-package me.nurio.minecraft.bungeecord.plugins.pluginbase.connection.packets.bungee;
+package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.bungee;
 
-import me.nurio.minecraft.bungeecord.plugins.pluginbase.connection.packets.Packet;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.Packet;
 import lombok.*;
-import me.nurio.minecraft.bungeecord.plugins.pluginbase.utils.IdentityUtil;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.utils.IdentityUtil;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

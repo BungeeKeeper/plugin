@@ -1,7 +1,7 @@
-package me.nurio.minecraft.bungeecord.plugins.pluginbase.connection.sockets;
+package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.sockets;
 
-import me.nurio.minecraft.bungeecord.plugins.pluginbase.connection.packets.system.GoodbyeSystemPacket;
-import me.nurio.minecraft.bungeecord.plugins.pluginbase.connection.packets.system.HandshakeSystemPacket;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.system.GoodbyeSystemPacket;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.system.HandshakeSystemPacket;
 import lombok.Getter;
 import lombok.SneakyThrows;
 

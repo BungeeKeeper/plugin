@@ -1,28 +1,26 @@
-package me.nurio.minecraft.bungeecord.plugins.pluginbase.connection.packets.bungee;
+package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.bungee;
 
-import me.nurio.minecraft.bungeecord.plugins.pluginbase.connection.packets.Packet;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.Packet;
 import lombok.*;
-import me.nurio.minecraft.bungeecord.plugins.pluginbase.utils.IdentityUtil;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.utils.IdentityUtil;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.InetSocketAddress;
-import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class PostConnectionPacket implements Packet {
+public class HandshakePacket implements Packet {
 
-    public static final byte PACKET_ID = 12;
+    public static final byte PACKET_ID = 10;
 
     private long eventId = IdentityUtil.timeBasedId();
 
-    @NonNull private String username;
-    @NonNull private UUID uuid;
     @NonNull private InetSocketAddress address;
+    @NonNull private String domain;
+    @NonNull private short port;
     @NonNull private int protocol;
-
 
     @Override
     public byte getId() {
@@ -32,13 +30,12 @@ public class PostConnectionPacket implements Packet {
     @Override
     @SneakyThrows
     public void read(DataInputStream inputStream) {
-        username = inputStream.readUTF();
-        uuid = UUID.fromString(inputStream.readUTF());
-
         String inetAddress = inputStream.readUTF();
         short inetPort = inputStream.readShort();
         address = InetSocketAddress.createUnresolved(inetAddress, inetPort);
 
+        domain = inputStream.readUTF();
+        port = inputStream.readShort();
         protocol = inputStream.readInt();
     }
 
@@ -47,10 +44,10 @@ public class PostConnectionPacket implements Packet {
     public void write(DataOutputStream outputStream) {
         outputStream.writeByte(PACKET_ID);
 
-        outputStream.writeUTF(username);
-        outputStream.writeUTF(uuid.toString());
         outputStream.writeUTF(address.getHostName());
         outputStream.writeShort(address.getPort());
+        outputStream.writeUTF(domain);
+        outputStream.writeShort(port);
         outputStream.writeInt(protocol);
     }
 

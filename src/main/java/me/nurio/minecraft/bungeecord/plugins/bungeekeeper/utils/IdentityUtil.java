@@ -1,4 +1,4 @@
-package me.nurio.minecraft.bungeecord.plugins.pluginbase.utils;
+package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.utils;
 
 import java.util.Random;
 

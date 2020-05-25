@@ -1,4 +1,4 @@
-package me.nurio.minecraft.bungeecord.plugins.pluginbase.connection.packets;
+package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
