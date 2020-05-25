@@ -24,7 +24,6 @@ public class PingListener implements Listener {
 
 
         HandshakePacket packet = new HandshakePacket(
-            0,
             (InetSocketAddress) connection.getSocketAddress(),
             handshake.getHost(),
             (short) handshake.getPort(),

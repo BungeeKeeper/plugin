@@ -26,7 +26,6 @@ public class PlayerConnectionListener implements Listener {
         PendingConnection connection = event.getConnection();
 
         ConnectionPacket packet = new ConnectionPacket(
-            0,
             connection.getName(),
             (InetSocketAddress) connection.getSocketAddress(),
             connection.getVersion()
@@ -44,7 +43,6 @@ public class PlayerConnectionListener implements Listener {
         PendingConnection connection = event.getConnection();
 
         PostConnectionPacket packet = new PostConnectionPacket(
-            0,
             connection.getName(),
             connection.getUniqueId(),
             (InetSocketAddress) connection.getSocketAddress(),
@@ -61,7 +59,6 @@ public class PlayerConnectionListener implements Listener {
         PendingConnection connection = event.getPlayer().getPendingConnection();
 
         PostConnectionPacket packet = new PostConnectionPacket(
-            0,
             connection.getName(),
             connection.getUniqueId(),
             (InetSocketAddress) connection.getSocketAddress(),

@@ -19,10 +19,9 @@ public class ServerListener implements Listener {
     @EventHandler
     public void onPlayerChangeServer(ServerConnectedEvent event) {
         ServerChangePacket packet = new ServerChangePacket(
-            0,
             event.getServer().getInfo().getName()
         );
-        System.out.println("PIP");
+
         System.out.println(event.getPlayer().getPendingConnection().getVirtualHost().toString());
         System.out.println(packet.toString());
     }
@@ -32,7 +31,6 @@ public class ServerListener implements Listener {
         ProxiedPlayer player = event.getPlayer();
 
         DisconnectPacket packet = new DisconnectPacket(
-            0,
             player.getServer().getInfo().getName()
         );
         System.out.println(packet.toString());
