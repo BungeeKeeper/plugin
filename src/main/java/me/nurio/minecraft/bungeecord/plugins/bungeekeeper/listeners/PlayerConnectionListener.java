@@ -1,9 +1,11 @@
 package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.listeners;
 
-import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.bungee.ConnectionPacket;
-import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.bungee.PostConnectionPacket;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.manager.PacketQueue;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.bungee.ConnectionPacket;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.bungee.PostConnectionPacket;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.sockets.ConnectionManager;
 import net.md_5.bungee.api.connection.PendingConnection;
 import net.md_5.bungee.api.event.LoginEvent;
 import net.md_5.bungee.api.event.PostLoginEvent;
@@ -18,6 +20,7 @@ import java.net.InetSocketAddress;
 public class PlayerConnectionListener implements Listener {
 
     @NonNull private Plugin plugin;
+    private PacketQueue outputQueue = ConnectionManager.getOutputQueue();
 
     @EventHandler
     public void onPlayerConnect(PreLoginEvent event) {
@@ -30,9 +33,7 @@ public class PlayerConnectionListener implements Listener {
             (InetSocketAddress) connection.getSocketAddress(),
             connection.getVersion()
         );
-
-        System.out.println(connection.getVirtualHost());
-        System.out.println(packet.toString());
+        outputQueue.registerPacket(packet);
 
         event.completeIntent(plugin);
     }
@@ -48,6 +49,7 @@ public class PlayerConnectionListener implements Listener {
             (InetSocketAddress) connection.getSocketAddress(),
             connection.getVersion()
         );
+        outputQueue.registerPacket(packet);
 
         System.out.println(connection.getVirtualHost());
         System.out.println(packet.toString());
@@ -64,6 +66,7 @@ public class PlayerConnectionListener implements Listener {
             (InetSocketAddress) connection.getSocketAddress(),
             connection.getVersion()
         );
+        outputQueue.registerPacket(packet);
 
         System.out.println(connection.getVirtualHost());
         System.out.println(packet.toString());

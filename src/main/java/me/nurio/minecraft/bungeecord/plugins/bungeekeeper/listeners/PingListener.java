@@ -1,8 +1,10 @@
 package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.listeners;
 
-import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.bungee.HandshakePacket;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.manager.PacketQueue;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.bungee.HandshakePacket;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.sockets.ConnectionManager;
 import net.md_5.bungee.api.connection.PendingConnection;
 import net.md_5.bungee.api.event.PlayerHandshakeEvent;
 import net.md_5.bungee.api.plugin.Listener;
@@ -16,6 +18,7 @@ import java.net.InetSocketAddress;
 public class PingListener implements Listener {
 
     @NonNull private Plugin plugin;
+    private PacketQueue outputQueue = ConnectionManager.getOutputQueue();
 
     @EventHandler
     public void onPing(PlayerHandshakeEvent event) {
@@ -29,6 +32,7 @@ public class PingListener implements Listener {
             (short) handshake.getPort(),
             connection.getVersion()
         );
+        outputQueue.registerPacket(packet);
 
         System.out.println(packet.toString());
     }
