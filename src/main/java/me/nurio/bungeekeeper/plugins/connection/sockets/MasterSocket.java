@@ -1,4 +1,4 @@
-package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.sockets;
+package me.nurio.bungeekeeper.plugins.connection.sockets;
 
 import lombok.Getter;
 import lombok.SneakyThrows;

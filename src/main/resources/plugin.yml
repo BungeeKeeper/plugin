@@ -1,5 +1,5 @@
 name: BungeeKeeper
-main: me.nurio.minecraft.bungeecord.plugins.bungeekeeper.MClass
-author: "Nurio Fernández"
+main: me.nurio.bungeekeeper.plugin.MClass
+author: "Nurio Fernandez"
 version: 0.0.1
 description: Minecraft BungeeCord AntiBot plugin.
