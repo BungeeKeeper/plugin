@@ -1,6 +1,6 @@
 package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.manager;
 
-import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.Packet;
+import me.nurio.bungeekeeper.packets.Packet;
 import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.sockets.ConnectionManager;
 
 import java.io.DataOutputStream;

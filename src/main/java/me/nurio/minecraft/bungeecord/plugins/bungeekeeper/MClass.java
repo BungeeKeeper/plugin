@@ -1,8 +1,8 @@
 package me.nurio.minecraft.bungeecord.plugins.bungeekeeper;
 
 import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.sockets.ConnectionManager;
-import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.listeners.PlayerConnectionListener;
 import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.listeners.PingListener;
+import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.listeners.PlayerConnectionListener;
 import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.listeners.ServerListener;
 import net.md_5.bungee.api.plugin.Plugin;
 

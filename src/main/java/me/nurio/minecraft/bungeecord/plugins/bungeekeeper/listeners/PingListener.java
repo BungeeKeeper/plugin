@@ -2,8 +2,8 @@ package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.listeners;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import me.nurio.bungeekeeper.packets.bungee.HandshakePacket;
 import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.manager.PacketQueue;
-import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.bungee.HandshakePacket;
 import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.sockets.ConnectionManager;
 import net.md_5.bungee.api.connection.PendingConnection;
 import net.md_5.bungee.api.event.PlayerHandshakeEvent;

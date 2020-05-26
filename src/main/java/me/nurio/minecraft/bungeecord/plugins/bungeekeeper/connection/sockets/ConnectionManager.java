@@ -1,9 +1,9 @@
 package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.sockets;
 
+import lombok.Getter;
 import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.manager.ConnectionAttender;
 import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.manager.ConnectionListener;
 import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.manager.PacketQueue;
-import lombok.Getter;
 
 public class ConnectionManager {
 

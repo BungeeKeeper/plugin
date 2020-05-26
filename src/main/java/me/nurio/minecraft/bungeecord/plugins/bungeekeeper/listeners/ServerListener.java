@@ -2,9 +2,9 @@ package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.listeners;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import me.nurio.bungeekeeper.packets.bungee.DisconnectPacket;
+import me.nurio.bungeekeeper.packets.bungee.ServerChangePacket;
 import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.manager.PacketQueue;
-import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.bungee.DisconnectPacket;
-import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.bungee.ServerChangePacket;
 import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.sockets.ConnectionManager;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.event.PlayerDisconnectEvent;

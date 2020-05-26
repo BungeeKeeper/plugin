@@ -13,6 +13,10 @@
             <id>bungeecord-repo</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </repository>
+        <repository>
+            <id>nurio-repo</id>
+            <url>https://nurio.me/repo/mvn/</url>
+        </repository>
     </repositories>
 
 
@@ -22,6 +26,14 @@
             <groupId>net.md-5</groupId>
             <artifactId>bungeecord-api</artifactId>
             <version>1.15-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- BungeeKeeper Packets -->
+        <dependency>
+            <groupId>me.nurio.bungeekeeper</groupId>
+            <artifactId>packets</artifactId>
+            <version>0.0.1</version>
             <scope>provided</scope>
         </dependency>
 

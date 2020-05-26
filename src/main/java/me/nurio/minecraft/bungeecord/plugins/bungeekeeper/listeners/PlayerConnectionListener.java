@@ -2,9 +2,9 @@ package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.listeners;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import me.nurio.bungeekeeper.packets.bungee.ConnectionPacket;
+import me.nurio.bungeekeeper.packets.bungee.PostConnectionPacket;
 import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.manager.PacketQueue;
-import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.bungee.ConnectionPacket;
-import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.bungee.PostConnectionPacket;
 import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.sockets.ConnectionManager;
 import net.md_5.bungee.api.connection.PendingConnection;
 import net.md_5.bungee.api.event.LoginEvent;

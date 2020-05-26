@@ -1,9 +1,9 @@
 package me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.sockets;
 
-import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.system.GoodbyeSystemPacket;
-import me.nurio.minecraft.bungeecord.plugins.bungeekeeper.connection.packets.system.HandshakeSystemPacket;
 import lombok.Getter;
 import lombok.SneakyThrows;
+import me.nurio.bungeekeeper.packets.system.GoodbyeSystemPacket;
+import me.nurio.bungeekeeper.packets.system.HandshakeSystemPacket;
 
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
@@ -36,7 +36,7 @@ public class MasterSocket {
         // Send goodbye packet
         goodbye();
 
-        // Close me.nurio.minecraft.bungeecord.plugins.pluginbase.connection
+        // Close connection
         outputStream.close();
         inputStream.close();
         sslSocket.close();
