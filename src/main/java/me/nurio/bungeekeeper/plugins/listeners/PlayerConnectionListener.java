@@ -6,6 +6,7 @@ import me.nurio.bungeekeeper.packets.bungee.ConnectionPacket;
 import me.nurio.bungeekeeper.packets.bungee.PostConnectionPacket;
 import me.nurio.bungeekeeper.plugins.connection.manager.PacketQueue;
 import me.nurio.bungeekeeper.plugins.connection.sockets.ConnectionManager;
+import me.nurio.bungeekeeper.plugins.manager.EventIdentityManager;
 import net.md_5.bungee.api.connection.PendingConnection;
 import net.md_5.bungee.api.event.LoginEvent;
 import net.md_5.bungee.api.event.PostLoginEvent;
@@ -34,6 +35,7 @@ public class PlayerConnectionListener implements Listener {
             connection.getVersion()
         );
         outputQueue.registerPacket(packet);
+        EventIdentityManager.register(packet.getEventId(), event);
 
         event.completeIntent(plugin);
     }
@@ -50,9 +52,8 @@ public class PlayerConnectionListener implements Listener {
             connection.getVersion()
         );
         outputQueue.registerPacket(packet);
+        EventIdentityManager.register(packet.getEventId(), event);
 
-        System.out.println(connection.getVirtualHost());
-        System.out.println(packet.toString());
         event.completeIntent(plugin);
     }
 
@@ -67,9 +68,7 @@ public class PlayerConnectionListener implements Listener {
             connection.getVersion()
         );
         outputQueue.registerPacket(packet);
-
-        System.out.println(connection.getVirtualHost());
-        System.out.println(packet.toString());
+        EventIdentityManager.register(packet.getEventId(), event);
     }
 
 }

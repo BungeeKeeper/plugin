@@ -7,7 +7,7 @@ import me.nurio.bungeekeeper.plugins.connection.sockets.ConnectionManager;
 
 import java.io.DataInputStream;
 
-public class ConnectionListener extends Thread {
+public class PacketListener extends Thread {
 
     private PacketQueue inputQueue = ConnectionManager.getInputQueue();
     private DataInputStream inputStream = ConnectionManager.getSocket().getInputStream();

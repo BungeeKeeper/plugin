@@ -1,16 +1,16 @@
 package me.nurio.bungeekeeper.plugins.connection.sockets;
 
 import lombok.Getter;
-import me.nurio.bungeekeeper.plugins.connection.manager.ConnectionAttender;
-import me.nurio.bungeekeeper.plugins.connection.manager.ConnectionListener;
+import me.nurio.bungeekeeper.plugins.connection.manager.PacketDispenser;
+import me.nurio.bungeekeeper.plugins.connection.manager.PacketListener;
 import me.nurio.bungeekeeper.plugins.connection.manager.PacketQueue;
 
 public class ConnectionManager {
 
     @Getter private static MasterSocket socket = new MasterSocket();
 
-    @Getter private static ConnectionListener listener;
-    @Getter private static ConnectionAttender attender;
+    @Getter private static PacketListener listener;
+    @Getter private static PacketDispenser attender;
 
     @Getter private static PacketQueue inputQueue = new PacketQueue();
     @Getter private static PacketQueue outputQueue = new PacketQueue();
@@ -18,10 +18,10 @@ public class ConnectionManager {
     public static void enable() {
         socket.connect();
 
-        listener = new ConnectionListener();
+        listener = new PacketListener();
         listener.start();
 
-        attender = new ConnectionAttender();
+        attender = new PacketDispenser();
         attender.start();
     }
 

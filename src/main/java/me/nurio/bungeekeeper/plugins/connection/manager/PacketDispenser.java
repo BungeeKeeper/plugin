@@ -5,7 +5,7 @@ import me.nurio.bungeekeeper.plugins.connection.sockets.ConnectionManager;
 
 import java.io.DataOutputStream;
 
-public class ConnectionAttender extends Thread {
+public class PacketDispenser extends Thread {
 
     private PacketQueue outputQueue = ConnectionManager.getOutputQueue();
     private DataOutputStream outputStream = ConnectionManager.getSocket().getOutputStream();

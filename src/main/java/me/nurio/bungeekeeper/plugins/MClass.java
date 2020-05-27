@@ -4,6 +4,7 @@ import me.nurio.bungeekeeper.plugins.connection.sockets.ConnectionManager;
 import me.nurio.bungeekeeper.plugins.listeners.PingListener;
 import me.nurio.bungeekeeper.plugins.listeners.PlayerConnectionListener;
 import me.nurio.bungeekeeper.plugins.listeners.ServerListener;
+import me.nurio.bungeekeeper.plugins.manager.EventIdentityManager;
 import net.md_5.bungee.api.plugin.Plugin;
 
 public class MClass extends Plugin {
@@ -15,6 +16,7 @@ public class MClass extends Plugin {
         getProxy().getPluginManager().registerListener(this, new PingListener(this));
         getProxy().getPluginManager().registerListener(this, new ServerListener(this));
 
+        EventIdentityManager.enable(this);
         ConnectionManager.enable();
     }
 
