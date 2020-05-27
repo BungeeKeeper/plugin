@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import me.nurio.bungeekeeper.packets.bungee.HandshakePacket;
 import me.nurio.bungeekeeper.plugins.connection.manager.PacketQueue;
 import me.nurio.bungeekeeper.plugins.connection.sockets.ConnectionManager;
-import me.nurio.bungeekeeper.plugins.manager.EventIdentityManager;
+import me.nurio.bungeekeeper.plugins.events.EventIdentityManager;
 import net.md_5.bungee.api.connection.PendingConnection;
 import net.md_5.bungee.api.event.PlayerHandshakeEvent;
 import net.md_5.bungee.api.plugin.Listener;

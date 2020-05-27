@@ -1,4 +1,4 @@
-package me.nurio.bungeekeeper.plugins.manager;
+package me.nurio.bungeekeeper.plugins.events;
 
 import me.nurio.bungeekeeper.plugins.utils.SchedulerUtil;
 import net.md_5.bungee.api.plugin.Event;

@@ -4,7 +4,7 @@ import me.nurio.bungeekeeper.plugins.connection.sockets.ConnectionManager;
 import me.nurio.bungeekeeper.plugins.listeners.PingListener;
 import me.nurio.bungeekeeper.plugins.listeners.PlayerConnectionListener;
 import me.nurio.bungeekeeper.plugins.listeners.ServerListener;
-import me.nurio.bungeekeeper.plugins.manager.EventIdentityManager;
+import me.nurio.bungeekeeper.plugins.events.EventIdentityManager;
 import net.md_5.bungee.api.plugin.Plugin;
 
 public class MClass extends Plugin {

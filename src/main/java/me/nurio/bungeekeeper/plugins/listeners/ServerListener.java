@@ -6,7 +6,7 @@ import me.nurio.bungeekeeper.packets.bungee.DisconnectPacket;
 import me.nurio.bungeekeeper.packets.bungee.ServerChangePacket;
 import me.nurio.bungeekeeper.plugins.connection.manager.PacketQueue;
 import me.nurio.bungeekeeper.plugins.connection.sockets.ConnectionManager;
-import me.nurio.bungeekeeper.plugins.manager.EventIdentityManager;
+import me.nurio.bungeekeeper.plugins.events.EventIdentityManager;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.event.PlayerDisconnectEvent;
 import net.md_5.bungee.api.event.ServerConnectedEvent;
