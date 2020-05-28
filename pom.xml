@@ -29,14 +29,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- BungeeKeeper Packets -->
-        <dependency>
-            <groupId>me.nurio.bungeekeeper</groupId>
-            <artifactId>packets</artifactId>
-            <version>0.0.1</version>
-            <scope>compile</scope>
-        </dependency>
-
         <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>

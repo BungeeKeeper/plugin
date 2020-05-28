@@ -1,0 +1,3 @@
+[submodule "packets"]
+	path = packets
+	url = git@github.com:BungeeKeeper/packets.git
