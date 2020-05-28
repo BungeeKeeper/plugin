@@ -34,7 +34,7 @@
             <groupId>me.nurio.bungeekeeper</groupId>
             <artifactId>packets</artifactId>
             <version>0.0.1</version>
-            <scope>provided</scope>
+            <scope>compile</scope>
         </dependency>
 
         <!-- Lombok -->

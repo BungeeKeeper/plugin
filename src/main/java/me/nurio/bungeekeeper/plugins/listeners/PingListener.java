@@ -26,7 +26,6 @@ public class PingListener implements Listener {
         PendingConnection connection = event.getConnection();
         Handshake handshake = event.getHandshake();
 
-
         HandshakePacket packet = new HandshakePacket(
             (InetSocketAddress) connection.getSocketAddress(),
             handshake.getHost(),
