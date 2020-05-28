@@ -30,7 +30,8 @@ public class PingListener implements Listener {
             (InetSocketAddress) connection.getSocketAddress(),
             handshake.getHost(),
             (short) handshake.getPort(),
-            connection.getVersion()
+            connection.getVersion(),
+            handshake.getRequestedProtocol()
         );
         outputQueue.registerPacket(packet);
         EventIdentityManager.register(packet.getEventId(), event);

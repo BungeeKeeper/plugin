@@ -23,6 +23,9 @@ public class ServerListener implements Listener {
     @EventHandler
     public void onPlayerChangeServer(ServerConnectedEvent event) {
         ServerChangePacket packet = new ServerChangePacket(
+            event.getPlayer().getName(),
+            event.getPlayer().getUniqueId(),
+            event.getPlayer().getAddress(),
             event.getServer().getInfo().getName()
         );
         outputQueue.registerPacket(packet);
@@ -37,7 +40,9 @@ public class ServerListener implements Listener {
         ProxiedPlayer player = event.getPlayer();
 
         DisconnectPacket packet = new DisconnectPacket(
-            player.getServer().getInfo().getName()
+            player.getName(),
+            player.getUniqueId(),
+            player.getAddress()
         );
         outputQueue.registerPacket(packet);
         EventIdentityManager.register(packet.getEventId(), event);

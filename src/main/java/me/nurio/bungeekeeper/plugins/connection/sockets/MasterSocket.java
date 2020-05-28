@@ -44,8 +44,11 @@ public class MasterSocket {
 
     private void handshake() {
         HandshakeSystemPacket packet = new HandshakeSystemPacket(
-            "Hola",
-            true
+            1,
+            "224nHfwa3quJ9mWj0a70RCHOMPtEJfPa",
+            "Nugget",
+            "0.0.0.0",
+            25565
         );
         packet.write(outputStream);
     }
