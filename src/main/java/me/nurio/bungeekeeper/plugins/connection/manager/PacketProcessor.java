@@ -10,10 +10,7 @@ public class PacketProcessor extends Thread {
     public void run() {
         while (true) {
             if (!inputQueue.hasPacket()) continue;
-
             Packet packet = inputQueue.getNextPacket();
-
-            System.out.println(packet.toString());
         }
     }
 

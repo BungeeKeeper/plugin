@@ -35,8 +35,6 @@ public class PingListener implements Listener {
         );
         outputQueue.registerPacket(packet);
         EventIdentityManager.register(packet.getEventId(), event);
-
-        System.out.println(packet.toString());
     }
 
 }

@@ -21,8 +21,6 @@ public class PacketListener extends Thread {
             packet.read(inputStream);
 
             inputQueue.registerPacket(packet);
-
-            System.out.println("RECIBIDO: " + packet.toString());
         }
     }
 

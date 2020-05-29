@@ -13,4 +13,12 @@ public class SchedulerUtil {
         return System.currentTimeMillis() - mills;
     }
 
+    public static void sleep(long millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
 }

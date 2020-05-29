@@ -16,8 +16,6 @@ public class PacketDispenser extends Thread {
 
             Packet packet = outputQueue.getNextPacket();
             packet.write(outputStream);
-
-            System.out.println(packet.toString());
         }
     }
 
