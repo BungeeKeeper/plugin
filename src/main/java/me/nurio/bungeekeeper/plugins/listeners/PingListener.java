@@ -13,8 +13,6 @@ import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.event.EventHandler;
 import net.md_5.bungee.protocol.packet.Handshake;
 
-import java.net.InetSocketAddress;
-
 @RequiredArgsConstructor
 public class PingListener implements Listener {
 
@@ -27,12 +25,13 @@ public class PingListener implements Listener {
         Handshake handshake = event.getHandshake();
 
         HandshakePacket packet = new HandshakePacket(
-            (InetSocketAddress) connection.getSocketAddress(),
+            connection.getSocketAddress().toString(),
             handshake.getHost(),
             (short) handshake.getPort(),
             connection.getVersion(),
             handshake.getRequestedProtocol()
         );
+
         EventIdentityManager.register(packet.getEventId(), event);
         outputQueue.registerPacket(packet);
     }

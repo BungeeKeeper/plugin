@@ -15,8 +15,6 @@ import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.event.EventHandler;
 
-import java.net.InetSocketAddress;
-
 @RequiredArgsConstructor
 public class PlayerConnectionListener implements Listener {
 
@@ -31,7 +29,7 @@ public class PlayerConnectionListener implements Listener {
 
         ConnectionPacket packet = new ConnectionPacket(
             connection.getName(),
-            (InetSocketAddress) connection.getSocketAddress(),
+            connection.getSocketAddress().toString(),
             connection.getVersion()
         );
 
@@ -47,7 +45,7 @@ public class PlayerConnectionListener implements Listener {
         PostConnectionPacket packet = new PostConnectionPacket(
             connection.getName(),
             connection.getUniqueId(),
-            (InetSocketAddress) connection.getSocketAddress(),
+            connection.getSocketAddress().toString(),
             connection.getVersion()
         );
 
@@ -64,7 +62,7 @@ public class PlayerConnectionListener implements Listener {
         PostConnectionPacket packet = new PostConnectionPacket(
             connection.getName(),
             connection.getUniqueId(),
-            (InetSocketAddress) connection.getSocketAddress(),
+            connection.getSocketAddress().toString(),
             connection.getVersion()
         );
 

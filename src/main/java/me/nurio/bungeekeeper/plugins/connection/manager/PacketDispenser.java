@@ -13,7 +13,6 @@ public class PacketDispenser extends Thread {
     public void run() {
         while (true) {
             if (!outputQueue.hasPacket()) continue;
-
             Packet packet = outputQueue.getNextPacket();
             packet.write(outputStream);
         }

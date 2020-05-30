@@ -14,8 +14,6 @@ import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.event.EventHandler;
 
-import java.net.InetSocketAddress;
-
 @RequiredArgsConstructor
 public class ServerListener implements Listener {
 
@@ -24,10 +22,12 @@ public class ServerListener implements Listener {
 
     @EventHandler
     public void onPlayerChangeServer(ServerConnectedEvent event) {
+        ProxiedPlayer player = event.getPlayer();
+
         ServerChangePacket packet = new ServerChangePacket(
-            event.getPlayer().getName(),
-            event.getPlayer().getUniqueId(),
-            (InetSocketAddress) event.getPlayer().getSocketAddress(),
+            player.getName(),
+            player.getUniqueId(),
+            player.getSocketAddress().toString(),
             event.getServer().getInfo().getName()
         );
 
@@ -42,7 +42,7 @@ public class ServerListener implements Listener {
         DisconnectPacket packet = new DisconnectPacket(
             player.getName(),
             player.getUniqueId(),
-            (InetSocketAddress) event.getPlayer().getSocketAddress()
+            player.getSocketAddress().toString()
         );
 
         EventIdentityManager.register(packet.getEventId(), event);

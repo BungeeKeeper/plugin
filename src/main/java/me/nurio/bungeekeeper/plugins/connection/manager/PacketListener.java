@@ -14,13 +14,25 @@ public class PacketListener extends Thread {
 
     @SneakyThrows
     public void run() {
-        while (true) {
-            byte packetId = inputStream.readByte();
+        try {
+            while (!isInterrupted()) {
+                byte packetId = inputStream.readByte();
+                processPacket(packetId);
+            }
+        } catch (Exception er) {
+            System.err.println("Connection loss.");
+            ConnectionManager.reConnect();
+        }
+    }
 
+    private void processPacket(byte packetId) {
+        try {
             Packet packet = PacketFactory.createPacketById(packetId);
             packet.read(inputStream);
 
             inputQueue.registerPacket(packet);
+        } catch (Exception er) {
+            System.err.println("Something went wrong reading a packet. (ID: " + packetId + ")");
         }
     }
 

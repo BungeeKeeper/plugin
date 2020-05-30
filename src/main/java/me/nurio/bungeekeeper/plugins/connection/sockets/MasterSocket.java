@@ -12,7 +12,7 @@ import java.io.DataOutputStream;
 
 public class MasterSocket {
 
-    private SSLSocket sslSocket;
+    @Getter private SSLSocket sslSocket;
 
     @Getter private DataOutputStream outputStream;
     @Getter private DataInputStream inputStream;
@@ -22,6 +22,8 @@ public class MasterSocket {
         // Connect to server
         SSLSocketFactory factory = (SSLSocketFactory) SSLSocketFactory.getDefault();
         sslSocket = (SSLSocket) factory.createSocket("local.nurio.me", 6060);
+
+        System.out.println("Connected to BungeeKeeper!");
 
         // Register input and output channels
         outputStream = new DataOutputStream(sslSocket.getOutputStream());

@@ -1,5 +1,6 @@
 package me.nurio.bungeekeeper.plugins;
 
+import lombok.Getter;
 import me.nurio.bungeekeeper.plugins.connection.sockets.ConnectionManager;
 import me.nurio.bungeekeeper.plugins.events.EventIdentityManager;
 import me.nurio.bungeekeeper.plugins.listeners.PingListener;
@@ -10,8 +11,12 @@ import net.md_5.bungee.api.plugin.Plugin;
 
 public class MClass extends Plugin {
 
+    @Getter private static Plugin instance;
+
     @Override
     public void onEnable() {
+        instance = this;
+
         getLogger().info("Anguilas Activadas");
         getProxy().getPluginManager().registerListener(this, new PlayerConnectionListener(this));
         getProxy().getPluginManager().registerListener(this, new PingListener(this));
