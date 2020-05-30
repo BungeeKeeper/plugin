@@ -18,8 +18,7 @@ public class EventIdentityManager {
 
     public static Event getById(long eventId) {
         if (!eventMap.containsKey(eventId)) {
-            System.err.println("Requested event was not found (id: " + eventId + ").");
-            return null;
+            throw new RuntimeException("Requested event was not found (id: " + eventId + ").");
         }
 
         return eventMap.get(eventId);

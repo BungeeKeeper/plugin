@@ -34,10 +34,9 @@ public class PlayerConnectionListener implements Listener {
             (InetSocketAddress) connection.getSocketAddress(),
             connection.getVersion()
         );
-        outputQueue.registerPacket(packet);
-        EventIdentityManager.register(packet.getEventId(), event);
 
-        event.completeIntent(plugin);
+        EventIdentityManager.register(packet.getEventId(), event);
+        outputQueue.registerPacket(packet);
     }
 
     @EventHandler
@@ -51,8 +50,9 @@ public class PlayerConnectionListener implements Listener {
             (InetSocketAddress) connection.getSocketAddress(),
             connection.getVersion()
         );
-        outputQueue.registerPacket(packet);
+
         EventIdentityManager.register(packet.getEventId(), event);
+        outputQueue.registerPacket(packet);
 
         event.completeIntent(plugin);
     }
@@ -67,8 +67,9 @@ public class PlayerConnectionListener implements Listener {
             (InetSocketAddress) connection.getSocketAddress(),
             connection.getVersion()
         );
-        outputQueue.registerPacket(packet);
+
         EventIdentityManager.register(packet.getEventId(), event);
+        outputQueue.registerPacket(packet);
     }
 
 }

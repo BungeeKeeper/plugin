@@ -30,8 +30,9 @@ public class ServerListener implements Listener {
             (InetSocketAddress) event.getPlayer().getSocketAddress(),
             event.getServer().getInfo().getName()
         );
-        outputQueue.registerPacket(packet);
+
         EventIdentityManager.register(packet.getEventId(), event);
+        outputQueue.registerPacket(packet);
     }
 
     @EventHandler
@@ -43,8 +44,9 @@ public class ServerListener implements Listener {
             player.getUniqueId(),
             (InetSocketAddress) event.getPlayer().getSocketAddress()
         );
-        outputQueue.registerPacket(packet);
+
         EventIdentityManager.register(packet.getEventId(), event);
+        outputQueue.registerPacket(packet);
     }
 
 }

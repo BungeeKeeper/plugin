@@ -3,6 +3,7 @@ package me.nurio.bungeekeeper.plugins.connection.sockets;
 import lombok.Getter;
 import me.nurio.bungeekeeper.plugins.connection.manager.PacketDispenser;
 import me.nurio.bungeekeeper.plugins.connection.manager.PacketListener;
+import me.nurio.bungeekeeper.plugins.connection.manager.PacketProcessor;
 import me.nurio.bungeekeeper.plugins.connection.manager.PacketQueue;
 
 public class ConnectionManager {
@@ -11,6 +12,7 @@ public class ConnectionManager {
 
     @Getter private static PacketListener listener;
     @Getter private static PacketDispenser attender;
+    @Getter private static PacketProcessor processor;
 
     @Getter private static PacketQueue inputQueue = new PacketQueue();
     @Getter private static PacketQueue outputQueue = new PacketQueue();
@@ -23,6 +25,9 @@ public class ConnectionManager {
 
         attender = new PacketDispenser();
         attender.start();
+
+        processor = new PacketProcessor();
+        processor.start();
     }
 
     public static void disable() {

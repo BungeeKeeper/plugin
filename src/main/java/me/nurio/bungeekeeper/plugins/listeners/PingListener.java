@@ -33,8 +33,8 @@ public class PingListener implements Listener {
             connection.getVersion(),
             handshake.getRequestedProtocol()
         );
-        outputQueue.registerPacket(packet);
         EventIdentityManager.register(packet.getEventId(), event);
+        outputQueue.registerPacket(packet);
     }
 
 }
