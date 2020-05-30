@@ -4,6 +4,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import me.nurio.bungeekeeper.plugins.events.types.AllowedConnectionEvent;
 import me.nurio.bungeekeeper.plugins.events.types.BlockedConnectionEvent;
+import me.nurio.bungeekeeper.plugins.utils.MessageGenerator;
 import net.md_5.bungee.api.event.PreLoginEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.Plugin;
@@ -24,6 +25,10 @@ public class ResponseListener implements Listener {
     @EventHandler
     public void onBlock(BlockedConnectionEvent event) {
         System.out.println("Event blocked");
+        PreLoginEvent loginEvent = (PreLoginEvent) event.getEvent(); // TODO Generify this event
+
+        loginEvent.setCancelReason(MessageGenerator.getKickMessage(event.getMessage()));
+        loginEvent.setCancelled(true);
         event.getEvent().completeIntent(plugin);
     }
 
