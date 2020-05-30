@@ -2,12 +2,12 @@ package me.nurio.bungeekeeper.plugins.events.adapters;
 
 import me.nurio.bungeekeeper.packets.Packet;
 import me.nurio.bungeekeeper.packets.system.LicenceSystemPacket;
-import me.nurio.bungeekeeper.plugins.events.PacketAdapter;
+import me.nurio.bungeekeeper.plugins.events.EventAdapter;
 import me.nurio.bungeekeeper.plugins.events.types.LicenceAcceptedEvent;
 import me.nurio.bungeekeeper.plugins.events.types.LicenceDeniedEvent;
 import net.md_5.bungee.api.plugin.Event;
 
-public class LicencePacketAdapter implements PacketAdapter {
+public class LicenceEventAdapter implements EventAdapter {
 
     @Override
     public Event getEvent(Packet packet) {
