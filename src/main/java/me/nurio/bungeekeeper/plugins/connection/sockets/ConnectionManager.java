@@ -33,6 +33,7 @@ public class ConnectionManager {
     public static void disable() {
         listener.interrupt();
         attender.interrupt();
+        processor.interrupt();
 
         socket.disconnect();
     }
