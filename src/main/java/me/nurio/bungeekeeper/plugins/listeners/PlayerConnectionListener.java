@@ -4,6 +4,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import me.nurio.bungeekeeper.packets.bungee.ConnectionPacket;
 import me.nurio.bungeekeeper.packets.bungee.PostConnectionPacket;
+import me.nurio.bungeekeeper.packets.bungee.PreConnectionPacket;
 import me.nurio.bungeekeeper.plugins.connection.manager.PacketQueue;
 import me.nurio.bungeekeeper.plugins.connection.sockets.ConnectionManager;
 import me.nurio.bungeekeeper.plugins.events.EventIdentityManager;
@@ -27,7 +28,7 @@ public class PlayerConnectionListener implements Listener {
 
         PendingConnection connection = event.getConnection();
 
-        ConnectionPacket packet = new ConnectionPacket(
+        PreConnectionPacket packet = new PreConnectionPacket(
             connection.getName(),
             connection.getSocketAddress().toString(),
             connection.getVersion()
@@ -42,11 +43,12 @@ public class PlayerConnectionListener implements Listener {
         event.registerIntent(plugin);
         PendingConnection connection = event.getConnection();
 
-        PostConnectionPacket packet = new PostConnectionPacket(
+        ConnectionPacket packet = new ConnectionPacket(
             connection.getName(),
             connection.getUniqueId(),
             connection.getSocketAddress().toString(),
-            connection.getVersion()
+            connection.getVersion(),
+            connection.isOnlineMode()
         );
 
         EventIdentityManager.register(packet.getEventId(), event);
@@ -63,7 +65,8 @@ public class PlayerConnectionListener implements Listener {
             connection.getName(),
             connection.getUniqueId(),
             connection.getSocketAddress().toString(),
-            connection.getVersion()
+            connection.getVersion(),
+            connection.isOnlineMode()
         );
 
         EventIdentityManager.register(packet.getEventId(), event);
